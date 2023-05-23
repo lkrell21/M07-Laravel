@@ -8,7 +8,30 @@ use Illuminate\Database\Eloquent\Model;
 
 class elmeucontrolador extends Controller
 {
-    //
+    public function formularibuscar ()
+    {
+        $todo= texemple::all();
+        return view('buscar',['todos.buscar'=>$todo]);
+    }
+
+    public function buscar (Request $request)
+    {
+        $request->validate(
+            [
+                'nombre'=>'required'
+            ],
+            [
+            'nombre.required'=>'El nombre es obligatorio'            
+            ]            
+        );
+       
+        $nombre=$request->nombre;
+        //dd($nombre); //comprova informació en el SGBD
+        $todo=texemple::where('nom','like',"%$nombre%")->paginate(10);        
+        return view('mostrarresul', compact('todo'));        
+    }
+
+
     public function insert (Request $request)
     {
         $request->validate(
@@ -44,8 +67,10 @@ class elmeucontrolador extends Controller
     public function mostrar()
     {
         $todo= texemple::all();
-        return $todo;
-        // return view('mostrar', compact('todo'));    
+        //return $todo;
+        return view('mostrar', compact('todo'));    
+
+
     }
 
 }

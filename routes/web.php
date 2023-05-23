@@ -39,6 +39,8 @@ Route::get('/add_player', [elmeucontrolador::class, 'formulari'])->name('add_pla
 
 Route::post('add_player', [elmeucontrolador::class, 'insert'])->name('todos');
 
+Route::get('/buscar', [elmeucontrolador::class,  'formularibuscar'])->name('todos-buscar');
+Route::post('/buscar', [elmeucontrolador::class, 'buscar'])->name('todos-buscar');
 
 
 // Route::get('/inici', function () {

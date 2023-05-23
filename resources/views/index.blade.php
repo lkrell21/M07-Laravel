@@ -1,6 +1,6 @@
 @extends('app')
-
 @section('content')
+
   <div class="mb-3">
     <form action="{{route ('todos') }}" method="POST">
       @csrf 
