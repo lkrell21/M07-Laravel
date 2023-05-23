@@ -38,7 +38,7 @@ class elmeucontrolador extends Controller
             [
                 'nombre'=>'required|min:3',
                 'email' => 'required|email',
-                'contrasenya' => 'required|min:6'
+                'contrasenya' => 'required|min:5'
             ],
             [
                 'nombre.required'=>'El nombre es obligatorio',
@@ -46,7 +46,7 @@ class elmeucontrolador extends Controller
                 'email.required' => 'El correu electrònic és obligatori',
                 'email.email' => 'El correu electrònic no té un format vàlid',
                 'contrasenya.required' => 'La contrasenya és obligatòria',
-                'contrasenya.min' => 'La contrasenya ha de tenir com a mínim 6 caràcters',
+                'contrasenya.min' => 'La contrasenya ha de tenir com a mínim 5 caràcters',
                 
             ]
             );
